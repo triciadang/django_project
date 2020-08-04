@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html xml:lang="en">
+<head>
+
+    <title>Recommended Books Site</title>
+
+    <base href="/">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bookcss.css' %}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <script src="{% static 'js/script.js' %}" defer="defer"></script>
+
+
+</head>
+<body>
+
+	<table border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4"><div id="csl_site_title"><center> Recommended Books </center></div></td>
+		</tr>
+
+		<tr>
+			<td width="33%"><center><div id="books_navigation"><a href="/trial_app/">Site Intro</a></div></center></td>
+
+			<td width="33%"><center><div id="books_navigation"><a href="/trial_app/list_of_books/">List of Recommended Books</a></div></center></td>
+
+			<td width="33%"><center><div id="books_navigation"><a href="/trial_app/adding_books/">Add Your Own Books</a></div></center></td>
+		</tr>
+		</tbody>
+	</table>
+
+		<h2> <div id="page_title"> {% block title %} Site Introduction {% endblock %} </div> </h2>
+
+		{% if messages %}
+			{% for message in messages %}
+			{{ message }}
+			{% endfor %}
+		{% endif %}
+
+		{% block content %}	
+
+
+		<p>This website offers a list of recommended books that you should read at your leisure. Additionally, if you have book recomendations yourself, you can add them too!</p><br>
+
+		<img alt="CSL Logo" src="{% static 'css/book.png' %}"></img>
+
+		{% endblock %}
+		
+</body>
+</html>

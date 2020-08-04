@@ -1,0 +1,23 @@
+{% extends "./index.html" %}
+
+
+
+{% block title %} List of Recommended Books {% endblock %}
+
+{% block content %}
+
+
+	<table border="1" cellpadding="4">
+
+		<tr><th>Title</th><th>Author</th><th>Summary</th><th>Recommender's Email</tr>
+
+		{% for book in books %}
+			<tr><td>{{ book.title }}</td>
+			<td>{{ book.author }}</td>
+			<td>{{ book.summary }} </td>
+			<td>{{ book.your_email }}</td></tr>
+			
+		{% endfor %}
+	</table>
+
+{% endblock %}

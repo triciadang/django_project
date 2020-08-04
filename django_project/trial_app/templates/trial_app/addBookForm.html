@@ -1,0 +1,13 @@
+{% extends "./index.html" %}
+
+{% block title %} Add Your Own Books to the List {% endblock %}
+
+{% block content %}
+
+<form method="POST">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button type="submit">Add Book</button>
+</form>
+
+{% endblock %}
